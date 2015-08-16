@@ -1,0 +1,25 @@
+{
+  "jspm": {
+    "directories": {},
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.4",
+      "angular-bootstrap": "github:angular-ui/bootstrap-bower@^0.13.3",
+      "angular-bootstrap-lightbox": "npm:angular-bootstrap-lightbox@^0.7.0",
+      "angular-resource": "github:angular/bower-angular-resource@^1.4.4",
+      "bootstrap": "github:twbs/bootstrap@^3.3.5",
+      "css": "github:systemjs/plugin-css@^0.1.13",
+      "font-awesome": "npm:font-awesome@^4.4.0",
+      "lodash": "npm:lodash@^3.10.1"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    },
+    "overrides": {
+      "npm:angular-bootstrap-lightbox@0.7.0": {
+        "main": "dist/angular-bootstrap-lightbox.js"
+      }
+    }
+  }
+}
