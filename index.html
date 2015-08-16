@@ -9,38 +9,39 @@ System.import('lib/main');
   <div ng-repeat="attachment in attachments"> 
     <div class="col-lg-3 col-md-4 col-xs-6 thumb">
       <a class="thumbnail" ng-click="openLightboxModal($index)">
-        <i class="fa fa-5x fa-{{attachment.type}}"></i>
+        <i class="fa fa-5x fa-{{attachment.icon}}"></i>
         <span class="label label-warning">{{attachment.caption}}</span>
       </a>
     </div>
   </div>
 </div>
 <script type="text/ng-template" id="custom.html">
-  <div class="modal-body" ng-controller="LightboxCtrl"
+<div class="modal-body" ng-controller="LightboxCtrl"
       ng-swipe-left="Lightbox.nextImage()"
       ng-swipe-right="Lightbox.prevImage()">
 
   <div class="lightbox-nav">
     <button class="close" aria-hidden="true" ng-click="$dismiss()">×</button>
     <div class="btn-group">
-      <a class="btn btn-xs btn-default" ng-click="Lightbox.prevImage()">
+      <a class="btn btn-success" ng-click="Lightbox.prevImage()">
         ‹ Previous
       </a>
-      <a ng-href="{{Lightbox.imageUrl}}" target="_blank"
-          class="btn btn-xs btn-default" title="Open in new tab">
+      <a ng-href="{{Lightbox.imageUrl}}" target="_blank" class="btn btn-success" title="Open in new tab">
         Open image in new tab
       </a>
-      <a class="btn btn-xs btn-default" ng-click="Lightbox.nextImage()">
+      <a ng-click="download(Lightbox.imageUrl)" class="btn btn-danger">
+        Download file
+      </a>
+      <a class="btn btn-success" ng-click="Lightbox.nextImage()">
         Next ›
       </a>
     </div>
   </div>
-
-    <div class="lightbox-image-container">
-      <img lightbox-src="{{Lightbox.imageUrl}}">
-      <span>{{Lightbox.imageCaption}}</span>
-    </div>
+  <div class="lightbox-image-container">
+    <span class="btn-success">{{Lightbox.imageCaption}}</span>
+    <iframe lightbox-src="{{Lightbox.imageUrl}}"></iframe>
   </div>
+</div>
 </script>
 </body>
 </html>
